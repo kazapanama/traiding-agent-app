@@ -1,7 +1,12 @@
+import Coffee from "../components/Coffee/Coffee";
 
 const Main = () => {
     return ( 
-        <h1>main page {process.env.REACT_APP_BASE_URL}</h1>
+        <>
+            <h1>main page </h1>
+            < Coffee />
+        </>
+        
      );
 }
  

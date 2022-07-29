@@ -1,39 +1,48 @@
-import Coffee from "../components/Coffee/Coffee";
+import Section from "../components/Section/Section";
 
 import { useState, useEffect } from "react";
 
 import {db} from '../firebase'
-import { collection, doc, onSnapshot} from 'firebase/firestore'
+import { collection, getDocs} from 'firebase/firestore' 
+// doc,
 
 
 
 const Main = () => {
-
-    const [products, setProducts] = useState({})
-   
-
     const productsCollectionRef = collection(db,'products')
-
+    const [products, setProducts] = useState({})
+    const [categories,setCategories] = useState([])
 
     useEffect(() => {
         const getProducts = async () =>{
-          
-          await onSnapshot(productsCollectionRef,(data)=>{setProducts(data.docs.map((doc)=>({...doc.data(),id:doc.id})))})
-          
+          const data = await getDocs(productsCollectionRef)
+          const db = await data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+           setProducts(db)
+           setCategories(db.reduce((arr,item)=>{
+            if (!arr.includes(item.category)){
+              arr.push(item.category)
+            }
+            
+            return arr
+           },[]))
+           
         }
-    
+
         getProducts()
+        
       },[])
 
-
-
+     
 
     return ( 
-        <>
-            <h1>main page </h1>
-            < Coffee products={products}/>
-        </>
-        
+
+        <div className="wrapper">
+          <h1>main page </h1>
+             
+
+          {categories.map((item,i)=>< Section products={products} category={categories[i]} key={i}/>)}
+        </div>
+
      );
 }
  

@@ -2,7 +2,9 @@ import {useState,useEffect} from 'react'
 
 import {storage, db} from '../firebase'
 
-import { collection, addDoc, updateDoc, doc, deleteDoc, onSnapshot} from 'firebase/firestore'
+import { collection, addDoc} from 'firebase/firestore'
+// , updateDoc, doc, deleteDoc, onSnapshot
+
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage"
 
 
@@ -151,7 +153,7 @@ const Admin = () => {
 
                 </form>
 
-               {img && <img src={URL.createObjectURL(img)} style={{width:200,aspectRatio:1}}/>}
+               {img && <img src={URL.createObjectURL(img)} style={{width:200,aspectRatio:1}} alt='sample'/>}
 
             </div>
         

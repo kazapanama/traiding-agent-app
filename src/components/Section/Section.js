@@ -7,7 +7,7 @@ const Section = ({products,category}) => {
     return(
         <div className="wrapper">
             <h2>{category}</h2>
-            <div className='items'>
+            <div className='items' id={category}>
 
            {products[0] && products.filter(item=>item.category === category).map(item=>{
            

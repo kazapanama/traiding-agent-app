@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  scroll-margin-top: 130px;
 }
 
 body {
@@ -18,10 +19,13 @@ code {
     monospace;
 }
 
+a{
+  text-decoration: none;
+}
+
 .wrapper {
   max-width:1200px;
   margin: 0 auto;
-  
 }
 
 input{

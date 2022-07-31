@@ -1,13 +1,15 @@
 import Section from "../components/Section/Section";
+import {useGetDb} from '../context/DbContext'
 
-import useFetchDB from "../hooks/useFetchDB"; 
+
+
 
 
 
 const Main = () => {
     
 
-     const {products,categories} = useFetchDB()
+     const {products,categories} = useGetDb()
 
     return ( 
 

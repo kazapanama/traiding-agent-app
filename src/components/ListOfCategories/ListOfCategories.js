@@ -1,10 +1,12 @@
 import './ListOfCategories.scss'
-import useFetchDB from '../../hooks/useFetchDB';
+
+import {useGetDb} from '../../context/DbContext'
 
 
 const ListOfCategories = ({openCata,setOpenCata}) => {
-    
-const {categories} = useFetchDB()
+
+    const {categories} = useGetDb()
+
 
 
     

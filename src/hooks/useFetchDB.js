@@ -28,7 +28,7 @@ export default function useFetchDB() {
         }
 
         getProducts()
-        
+        console.log('fething...')
       },[])
       return {products,categories}
 }

@@ -28,6 +28,14 @@ const Admin = () => {
     
     const usesrsCollectionRef = collection(db,'products')
 
+    const resetForm = async() => {
+        setName('')
+        setWeight('')
+        setPrice('')
+        setInSet('')
+        setImg('')
+        setImgURL('')
+      }
 
 
     const handleSublit = async (e) => {
@@ -44,8 +52,10 @@ const Admin = () => {
         }
 
         await addDoc(usesrsCollectionRef,result)
+        await resetForm()
       }
 
+      
 
       useEffect(()=>{
         const uploadFile=()=>{

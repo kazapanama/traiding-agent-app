@@ -25,17 +25,8 @@
     }
 
 
-    .links{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items:center;
-        
-        a{
-            color:black;
-            font-size: 35px;
-            font-weight: 700;
-        }
+    .Cart-items{
+        max-width: 100%;
     }
 
 

@@ -163,7 +163,7 @@ const Admin = () => {
 
                 </form>
 
-               {img && <img src={URL.createObjectURL(img)} style={{width:200,aspectRatio:1}} alt='sample'/>}
+               {imgURL && <img src={imgURL} style={{width:200,aspectRatio:1}} alt='sample'/>}
 
             </div>
         

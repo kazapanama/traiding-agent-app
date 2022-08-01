@@ -31,7 +31,7 @@ export function ShoppingCartProvider({children}) {
 
     function decreaseCartQuantity(id){
         setCartItems(currItems=>{
-            if (cartItems.find(item=>item.id===id)?.quantity == 1){
+            if (cartItems.find(item=>item.id===id)?.quantity === 1){
                 return currItems.filter(item=>item.id !== id)
             } else {
                 return currItems.map(item=>{
@@ -51,7 +51,7 @@ export function ShoppingCartProvider({children}) {
     }
 
 
-    return <ShoppingCardContext.Provider value={{getItemQuantity, increaseCartQuantity, decreaseCartQuantity,removeFromCart,cartItems}}>
+    return <ShoppingCardContext.Provider value={{getItemQuantity, increaseCartQuantity, decreaseCartQuantity,removeFromCart,cartItems,setCartItems}}>
         {children}
     </ShoppingCardContext.Provider>
 }

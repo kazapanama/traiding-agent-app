@@ -35,10 +35,12 @@ const submitCart = async(e) => {
     return ( 
         <div className={openList ? 'ListOfItems active' : 'ListOfItems'}>
             <div className="wrapper">
-                <img src="./images/header/x.png" alt="x icon" onClick={()=>setOpenList(false)}/>
+                <img src="./images/header/x.png" alt="x icon" onClick={()=>{
+                    setOpenList(false)
+                    document.body.style.overflow=''}}/>
               
                 
-                
+            
                 <div className='Cart-items'>
                     {cartItems.map(item=>{
                     return <CartItem key={item.id} id={item.id} quantity={item.quantity}/>
@@ -53,6 +55,8 @@ const submitCart = async(e) => {
                         <input type='text' value={where} onChange={(e)=>{setWhere(e.target.value)}}/>
                         <button onClick={submitCart} type='submit'>Відправити</button>
                     </div>
+             
+                
                     
 
             </div>

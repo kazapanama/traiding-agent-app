@@ -13,12 +13,16 @@ const ListOfCategories = ({openCata,setOpenCata}) => {
     return ( 
         <div className={openCata ? 'ListOfCategories active' : 'ListOfCategories'}>
             <div className="wrapper">
-                <img src="./images/header/x.png" alt="x icon" onClick={()=>setOpenCata(false)}/>
+                <img src="./images/header/x.png" alt="x icon" onClick={()=>{
+                    setOpenCata(false)
+                    document.body.style.overflow=''}}/>
                 
                 
                 <div className="links">
                     {categories[0] && categories.map((cata,i)=>{
-                    return <a href={`#${cata}`} key={i} onClick={()=>setOpenCata(false)}>{cata}</a>
+                    return <a href={`#${cata}`} key={i} onClick={()=>{
+                        setOpenCata(false)
+                    document.body.style.overflow=''}}>{cata}</a>
                     })}
                 </div>
                 

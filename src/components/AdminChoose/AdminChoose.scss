@@ -1,0 +1,28 @@
+#admin-choose{
+    h1{
+        text-align: center;
+        margin-bottom: 50px;
+        margin-top: 20px;
+    }
+
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap:20px;
+    }
+
+    .choose-link{
+        font-size: 20px;
+        padding:10px 20px;
+        border:1px solid red;
+        border-radius: 5px;
+        font-weight: 700;
+        color:red;
+        &:hover{
+            color:white;
+            background-color: red;
+        }
+    }
+}

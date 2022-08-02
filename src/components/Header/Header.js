@@ -13,8 +13,12 @@ const Header = ({openCata,setOpenCata,openList,setOpenList}) => {
                <Link to='/'> <h1 className='logo'>Каталог</h1></Link>
                 <div className="header-icons">
                 <Link to='/admin'><img src='./images/header/admin.svg' alt='list icon' /></Link>
-                    <img src='./images/header/list.svg' alt='list icon' onClick={()=>setOpenList(true)}/>
-                    <img src='./images/header/category.svg' alt='category icon' onClick={()=>setOpenCata(true)}/>
+                    <img src='./images/header/list.svg' alt='list icon' onClick={()=>{
+                        setOpenList(true) 
+                        document.body.style.overflow='hidden'}}/>
+                    <img src='./images/header/category.svg' alt='category icon' onClick={()=>{
+                        setOpenCata(true)
+                        document.body.style.overflow='hidden'}}/>
                 </div>
             </div>
           

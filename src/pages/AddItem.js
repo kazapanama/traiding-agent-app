@@ -13,18 +13,18 @@ import PreviewItem from '../components/PreviewItem/PreviewItem'
 
 
 const AddItem = () => {
-    
-    const [name,setName] = useState('');
-    const [weight,setWeight] = useState('');
-    
-    const [unit,setUnit] = useState('г');
-    const [category,setCategory] = useState('Кава');
+    const [anItem,setAnItem] = useState({
+        name:'',
+        weight:0,
 
-    
-    const [inSet,setInSet] = useState('');
-    const [price,setPrice] = useState('');
- 
-    
+        unit:'г',
+        category:'Кава',
+
+        inSet:'',
+        price:0,
+
+
+    })
     
     const [img,setImg] = useState('');
     const [imgURL,setImgURL] = useState('')
@@ -32,10 +32,18 @@ const AddItem = () => {
     const usesrsCollectionRef = collection(db,'products')
 
     const resetForm = async() => {
-        setName('')
-        setWeight('')
-        setPrice('')
-        setInSet('')
+        setAnItem({
+            name:'',
+            weight:0,
+    
+            unit:'г',
+            category:'Кава',
+    
+            inSet:'',
+            price:0,
+    
+    
+        })
         setImg('')
         setImgURL('')
       }
@@ -45,13 +53,13 @@ const AddItem = () => {
         e.preventDefault()
 
         let result = {
-            name:name,
-            weight:weight,
-            measure_unit:unit,
-            category:category,
+            name:anItem.name,
+            weight:anItem.weight,
+            measure_unit:anItem.unit,
+            category:anItem.category,
             main_image:imgURL,
-            price:price,
-            in_set: inSet
+            price:anItem.price,
+            in_set: anItem.inSet
         }
 
         await addDoc(usesrsCollectionRef,result)
@@ -65,7 +73,7 @@ const AddItem = () => {
 
             const fileName = new Date().getTime() + img.name
             
-            const storageRef = ref(storage,`${category}/${fileName}`)
+            const storageRef = ref(storage,`${anItem.category}/${fileName}`)
 
             const uploadTask = uploadBytesResumable(storageRef, img);
 
@@ -121,38 +129,38 @@ const AddItem = () => {
                 <form onSubmit={handleSublit}>
                     <label>name:</label>
                     <input type="text" name='name'
-                    value={name}
-                    onChange={(e)=>setName(e.target.value)}/>
+                    value={anItem.name}
+                    onChange={(e)=>setAnItem({...anItem,name:e.target.value})}/>
                     <br />
 
                     <label>weight:</label>
                     <input type="text" name='weight'
-                    value={weight}
-                    onChange={(e)=>setWeight(e.target.value)}/>
+                    value={anItem.weight}
+                    onChange={(e)=>setAnItem({...anItem,weight:+e.target.value})}/>
                     <br />
 
                     <label>unit:</label>
                     <input type="text" name='unit'
-                    value={unit}
-                    onChange={(e)=>setUnit(e.target.value)}/>
+                    value={anItem.unit}
+                    onChange={(e)=>setAnItem({...anItem,unit:e.target.value})}/>
                     <br />
 
                     <label>in_set:</label>
                     <input type="text" name='in_set'
-                    value={inSet}
-                    onChange={(e)=>setInSet(e.target.value)}/>
+                    value={anItem.inSet}
+                    onChange={(e)=>setAnItem({...anItem,inSet:e.target.value})}/>
                     <br />
 
                     <label>category:</label>
                     <input type="text" name='category' 
-                    value={category}
-                    onChange={(e)=>setCategory(e.target.value)}/>
+                    value={anItem.category}
+                    onChange={(e)=>setAnItem({...anItem,category:e.target.value})}/>
                     <br />
 
                     <label>price:</label>
                     <input type="text" name='price'
-                    value={price}
-                    onChange={(e)=>setPrice(e.target.value)}/>
+                    value={anItem.price}
+                    onChange={(e)=>setAnItem({...anItem,price:+e.target.value})}/>
                     <br />
 
                     <label>img:</label>
@@ -168,8 +176,12 @@ const AddItem = () => {
                
 
             </div>
-        
-            <PreviewItem imgURL={imgURL}/>
+
+
+
+
+
+            <PreviewItem imgURL={imgURL} item={anItem}/>
 
 
             </div>

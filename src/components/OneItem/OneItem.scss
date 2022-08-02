@@ -1,10 +1,11 @@
 .one-item{
     width: 370px;
-    border: 1px solid red;
+    border-radius:5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    background-color:white;
   }
   
   
@@ -14,7 +15,6 @@
     display: flex;
     justify-content: center;
     align-items:center;
-    margin-top:20px;
   }
   
   .item-image{
@@ -26,6 +26,7 @@
     background-color: red;
     color: white;
     margin-bottom: 20px;
+    margin-top: 5px;
     border:none;
     padding:5px 10px;
     border-radius:5px;
@@ -46,7 +47,7 @@
     color:white;
     border-radius: 5px;
     border:none;
-    
+    margin-top: 5px;
   }
 
   .quantity-buttons{

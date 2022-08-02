@@ -49,7 +49,7 @@ const submitCart = async(e) => {
                     <h1>Всього: {total} грн</h1>
                </div>
                     <div>
-                        <label>Замовлення з:</label>
+                        <label>Адреса доставки:</label>
                         <input type='text' value={where} onChange={(e)=>{setWhere(e.target.value)}}/>
                         <button onClick={submitCart} type='submit'>Відправити</button>
                     </div>

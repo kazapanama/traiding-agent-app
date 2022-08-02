@@ -5,8 +5,12 @@ const Section = ({products,category}) => {
     
     
     return(
+        
         <div className="wrapper">
-            <h2>{category}</h2>
+            <div className="category-heading-background">
+                <h2 className='category-heading'>{category}</h2>
+            </div>
+            
             <div className='items' id={category}>
 
            {products[0] && products.filter(item=>item.category === category).map(item=>{

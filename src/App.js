@@ -3,6 +3,9 @@ import { Routes, Route } from 'react-router-dom';
 
 import Main from './pages/Main'
 import Admin from './pages/Admin';
+import AddItem from './pages/AddItem';
+import Orders from './pages/Orders';
+import EditItems from './pages/EditItems';
 import Header from './components/Header/Header';
 import { useState } from 'react';
 import {ShoppingCartProvider} from './context/ShoppingCardContext'
@@ -19,6 +22,9 @@ function App() {
           <Routes>
             <Route path='/' element={<Main/>} />
             <Route path='/admin' element={<Admin/>} />
+            <Route path='/admin/create' element={<AddItem/>} />
+            <Route path='/admin/orders' element={<Orders/>} />
+            <Route path='/admin/edit' element={<EditItems/>} />
           </Routes>
         </ShoppingCartProvider>
     </DbContextProvider>

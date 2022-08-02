@@ -12,9 +12,9 @@ const Header = ({openCata,setOpenCata,openList,setOpenList}) => {
             <div className="wrapper">
                <Link to='/'> <h1 className='logo'>Каталог</h1></Link>
                 <div className="header-icons">
-                <Link to='/admin'><img src='./images/header/admin.png' alt='list icon' /></Link>
-                    <img src='./images/header/list.png' alt='list icon' onClick={()=>setOpenList(true)}/>
-                    <img src='./images/header/category.png' alt='category icon' onClick={()=>setOpenCata(true)}/>
+                <Link to='/admin'><img src='./images/header/admin.svg' alt='list icon' /></Link>
+                    <img src='./images/header/list.svg' alt='list icon' onClick={()=>setOpenList(true)}/>
+                    <img src='./images/header/category.svg' alt='category icon' onClick={()=>setOpenCata(true)}/>
                 </div>
             </div>
           

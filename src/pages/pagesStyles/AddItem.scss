@@ -1,0 +1,17 @@
+#add-item{
+    .wrapper{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: nowrap;
+        gap:20px;
+    }
+    h1{
+        text-align: center;
+        margin-top:10px;
+        margin-bottom: 20px;
+    }
+    .form-part{
+        max-width: 400px;
+    }
+}

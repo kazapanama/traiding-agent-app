@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import {db} from '../firebase'
-import { collection, getDocs} from 'firebase/firestore'
+import { collection, getDocs,onSnapshot} from 'firebase/firestore'
 // doc,
 
 
@@ -14,9 +14,14 @@ export default function useFetchOrders() {
 
     useEffect(() => {
         const getOrders = async () =>{
-          const data = await getDocs(productsCollectionRef)
-          const db = await data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-           setOrders(db)
+
+          await onSnapshot(productsCollectionRef,(data)=>{setOrders(data.docs.map((doc)=>({...doc.data(),id:doc.id})))})
+     
+
+
+          // const data = await onSnapshot(productsCollectionRef)
+          // const db = await data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+          //  setOrders(db)
            
         }
 

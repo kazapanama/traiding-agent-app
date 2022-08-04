@@ -11,9 +11,13 @@ export default function useFetchDB() {
     const productsCollectionRef = collection(db,'products')
     const [products, setProducts] = useState({})
     const [categories,setCategories] = useState([])
+    
 
     useEffect(() => {
         const getProducts = async () =>{
+
+          
+
           const data = await getDocs(productsCollectionRef)
           const db = await data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
            setProducts(db)
@@ -23,12 +27,12 @@ export default function useFetchDB() {
             }
             
             return arr
-           },[]))
+           }
+           ,[]))
            
         }
-
         getProducts()
-        console.log('fething...')
+        
       },[])
       return {products,categories}
 }

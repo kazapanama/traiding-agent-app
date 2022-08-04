@@ -12,6 +12,7 @@ import PreviewItem from '../components/PreviewItem/PreviewItem'
 
 
 
+
 const AddItem = () => {
     const [anItem,setAnItem] = useState({
         name:'',
@@ -123,9 +124,13 @@ const AddItem = () => {
         <div id="add-item">
             <h1>add new product</h1>
             <div className="wrapper">
-            
+           
+           
+
             <div className='form-part'>
                 
+            
+
                 <form onSubmit={handleSublit}>
                     <label>name:</label>
                     <input type="text" name='name'

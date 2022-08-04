@@ -8,6 +8,7 @@ export function useGetDb(){
     return useContext(DbContext)
 }
 
+
 export function DbContextProvider({children}) {
     const {products,categories} = useFetchDB()
 

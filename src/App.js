@@ -7,6 +7,7 @@ import AddItem from './pages/AddItem';
 import Orders from './pages/Orders';
 import EditItems from './pages/EditItems';
 import Header from './components/Header/Header';
+import EditSingleItem from './pages/EditSingleItem';
 import { useState } from 'react';
 import {ShoppingCartProvider} from './context/ShoppingCardContext'
 import {DbContextProvider} from './context/DbContext'
@@ -25,6 +26,7 @@ function App() {
             <Route path='/admin/create' element={<AddItem/>} />
             <Route path='/admin/orders' element={<Orders/>} />
             <Route path='/admin/edit' element={<EditItems/>} />
+            <Route path='/admin/edit/:id' element={<EditSingleItem/>} />
           </Routes>
         </ShoppingCartProvider>
     </DbContextProvider>

@@ -64,7 +64,7 @@ const Orders = () => {
         
 
            
-            {console.log(products)}
+            
         </div>
         
      );

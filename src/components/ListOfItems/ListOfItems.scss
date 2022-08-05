@@ -1,6 +1,6 @@
 .ListOfItems{
     width:100vw;
-    height: 100vh;
+    height: 110vh;
     overflow-y: scroll;
     background-color:white;
     position:fixed;
@@ -33,6 +33,22 @@
         max-width: 100%;
         
     }
+    .list-submit{
+        margin-bottom: 200px;
 
+        @media (max-width:500px){
+            width:80%;
+        }
+    
+        button{
+            color:white;
+        background-color:blue;
+        padding:10px;
+        border:none;
+        border-radius: 5px;
+        margin:0 5px;
+        }
+    
+    }
 
 }

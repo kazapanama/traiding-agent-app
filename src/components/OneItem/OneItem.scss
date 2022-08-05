@@ -1,5 +1,7 @@
+
 .one-item{
-    width: 370px;
+    width:100%;
+    max-width: min(370px,90vw);
     border-radius:5px;
     display: flex;
     flex-direction: column;
@@ -18,7 +20,8 @@
   }
   
   .item-image{
-    max-width: 360px;
+    width:min(370px,90vw);
+    max-width: 350px;
   }
 
   .item-button{

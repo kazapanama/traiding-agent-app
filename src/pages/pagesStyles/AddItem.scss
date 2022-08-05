@@ -5,6 +5,10 @@
         justify-content: center;
         flex-wrap: nowrap;
         gap:20px;
+        @media(max-width:700px){
+            flex-direction: column;
+            align-items:center;
+        }
     }
     h1{
         text-align: center;
@@ -12,6 +16,18 @@
         margin-bottom: 20px;
     }
     .form-part{
-        max-width: 400px;
+        max-width: min(400px,95vw);
+    }
+
+    label{
+        font-size: 15px;
+        &:after{
+            content:' '
+        }
+    }
+
+    input{
+        min-width:70%;
+        margin: 5px 0;
     }
 }

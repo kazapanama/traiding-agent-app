@@ -156,11 +156,25 @@ const AddItem = () => {
                     onChange={(e)=>setAnItem({...anItem,inSet:e.target.value})}/>
                     <br />
 
+                    
+
+                    <select onChange={(e)=>setAnItem({...anItem,category:e.target.value})}> 
+                    <option value="Кава" >Кава</option>
+                    <option value="Солодощі" >Солодощі</option>
+                    <option value="Консервація | Макарони" >Консервація | Макарони</option>
+                    <option value="М'ясні вироби" >М'ясні вироби</option>
+                    <option value="Сир" >Сир</option>
+                    <option value="change">Інша</option>
+                    </select>
+                    <br />
+
                     <label>category:</label>
                     <input type="text" name='category' 
                     value={anItem.category}
                     onChange={(e)=>setAnItem({...anItem,category:e.target.value})}/>
                     <br />
+
+
 
                     <label>price:</label>
                     <input type="text" name='price'

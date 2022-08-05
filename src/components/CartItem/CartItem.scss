@@ -1,14 +1,22 @@
 .cart-item{
-    height: 75px;
+    min-height: 75px;
     display: flex;
     justify-content: space-between;
     align-items:center;
     border-bottom: 1px solid red;
 
+    @media(max-width:700px){
+        flex-direction: column;
+        gap:20px;
+        padding-bottom: 10px;
+    }
+
 
     .info{
         display: flex;
         align-items:center;
+
+        
     
         .quantity{
             margin-left: 10px;

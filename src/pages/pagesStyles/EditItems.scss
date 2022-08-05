@@ -5,6 +5,7 @@
     display: flex;
     align-items:center;
     border-bottom: 1px solid red;
+    background-color:white;
 
     &:first-of-type{
         margin-top: 50px;
@@ -15,7 +16,23 @@
         height:50px;
     }
 
+    .edit-btn-edit{
+        color:white;
+        background-color:blue;
+        padding:10px;
+        border:none;
+        margin:0 5px;
+        border-radius: 5px;
+    }
 
+    .edit-btn-delete{
+        color:white;
+        background-color:red;
+        padding:10px;
+        border:none;
+        margin:0 5px;
+        border-radius: 5px;
+    }
 }
 
 

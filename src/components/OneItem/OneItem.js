@@ -1,5 +1,6 @@
 import { useShoppingCart } from '../../context/ShoppingCardContext';
 import './OneItem.scss'
+import '../../index.scss'
 
 const OneItem = ({item}) => {
     

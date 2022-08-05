@@ -19,7 +19,7 @@ export default function useFetchDB() {
           
 
           const data = await getDocs(productsCollectionRef)
-          const db = await data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+          const db =  data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
            setProducts(db)
            setCategories(db.reduce((arr,item)=>{
             if (!arr.includes(item.category)){

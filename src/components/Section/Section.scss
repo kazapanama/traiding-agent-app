@@ -1,6 +1,9 @@
 .category-heading-background{
 
     background-color:red;
+    &:first-of-type{
+        margin-top: 60px;
+    }
 
     .category-heading{
         text-align: center;

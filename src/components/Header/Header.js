@@ -1,4 +1,5 @@
 import './Header.scss'
+
 import {Link} from 'react-router-dom'
 import ListOfCategories from '../ListOfCategories/ListOfCategories'
 import ListOfItems from '../ListOfItems/ListOfItems'
@@ -21,6 +22,9 @@ const Header = ({openCata,setOpenCata,openList,setOpenList}) => {
                         setOpenCata(true)
                         document.body.style.overflow='hidden'}}/>
                 </div>
+
+                        
+
             </div>
           
         </header>

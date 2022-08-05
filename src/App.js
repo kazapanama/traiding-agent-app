@@ -16,12 +16,14 @@ function App() {
   const [openCata,setOpenCata] = useState(false)
   const [openList,setOpenList] = useState(false)
 
+
   return (
     <DbContextProvider>
         <ShoppingCartProvider>
-          <Header openCata={openCata} setOpenCata={setOpenCata} openList={openList} setOpenList={setOpenList}/>
+          <Header openCata={openCata} setOpenCata={setOpenCata} openList={openList} 
+          setOpenList={setOpenList}/>
           <Routes>
-            <Route path='/' element={<Main/>} />
+            <Route path='/' element={<Main />} />
             <Route path='/admin' element={<Admin/>} />
             <Route path='/admin/create' element={<AddItem/>} />
             <Route path='/admin/orders' element={<Orders/>} />

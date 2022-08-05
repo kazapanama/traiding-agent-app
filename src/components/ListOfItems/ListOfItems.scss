@@ -1,6 +1,7 @@
 .ListOfItems{
     width:100vw;
-    min-height: 100vh;
+    height: 100vh;
+    overflow-y: scroll;
     background-color:white;
     position:fixed;
     z-index: 999;

@@ -18,24 +18,57 @@
         margin-bottom: 20px;
     }
     .form-part{
-        max-width: min(400px,95vw);
-    }
-
-    label{
-        font-size: 15px;
-        &:after{
-            content:' '
+        // max-width: min(400px,95vw);
+        background-color: white;
+        border-radius: 5px;
+        padding:10px;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        gap:5px;
+        .form-one-input{
+            display: flex;
+            flex-direction: column;
         }
+
+        label{
+            font-size: 18px;
+            font-weight: 300;
+            margin-bottom: 1px;
+            &:after{
+                content:' '
+            }
+        }
+    
+        input,select{
+            min-width:240px;
+            height: 25px;
+            margin-bottom: 5px;
+            font-size: 18px;
+            padding-left: 10px;
+            opacity: 0.9;
+            &[type="file"] {
+                max-width: 300px;
+                white-space: normal;
+                word-wrap: break-word;
+               
+                font-size: 12px;
+            }
+        }
+
+        
+
+
+
     }
 
-    input{
-        min-width:70%;
-        margin: 5px 0;
-    }
+    
 
     button{
         @include mixins.base-button(mixins.$primary-color);
         font-size:20px;
+        margin-bottom: 5px;
     }
 
     .one-item{

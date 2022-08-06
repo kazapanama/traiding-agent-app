@@ -4,7 +4,7 @@ const Search = ({setSearch}) => {
     return (
         <div className="search">
             <label>Пошук: </label>
-            <input type='text' onChange={(e)=>setSearch(e.target.value)}></input>
+            <input type='text' onChange={(e)=>setSearch(e.target.value.toLowerCase())}></input>
          </div>
     )
 }

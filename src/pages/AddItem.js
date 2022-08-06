@@ -122,7 +122,7 @@ const AddItem = () => {
     return ( 
        
         <div id="add-item">
-            <h1>add new product</h1>
+            <h1>Додати новий товар</h1>
             <div className="wrapper">
            
            
@@ -131,66 +131,72 @@ const AddItem = () => {
                 
             
 
-                <form onSubmit={handleSublit}>
-                    <label>Назва:</label>
-                    <input type="text" name='name'
-                    value={anItem.name}
-                    onChange={(e)=>setAnItem({...anItem,name:e.target.value})}/>
-                    <br />
-
-                    <label>Вага:</label>
-                    <input type="text" name='weight'
-                    value={anItem.weight}
-                    onChange={(e)=>setAnItem({...anItem,weight:+e.target.value})}/>
-                    <br />
-
-                    <label>Од. вим.:</label>
-                    <input type="text" name='unit'
-                    value={anItem.unit}
-                    onChange={(e)=>setAnItem({...anItem,unit:e.target.value})}/>
-                    <br />
-
-                    <label>В ящику:</label>
-                    <input type="text" name='in_set'
-                    value={anItem.inSet}
-                    onChange={(e)=>setAnItem({...anItem,inSet:e.target.value})}/>
-                    <br />
-
+                    <div className='form-one-input'>
+                        <label>Назва:</label>
+                        <input type="text" name='name'
+                        value={anItem.name}
+                        onChange={(e)=>setAnItem({...anItem,name:e.target.value})}/>
+                    </div>
                     
-
-                    <select onChange={(e)=>setAnItem({...anItem,category:e.target.value})}> 
-                    <option value="Кава" >Кава</option>
-                    <option value="Солодощі" >Солодощі</option>
-                    <option value="Консервація | Макарони" >Консервація | Макарони</option>
-                    <option value="М'ясні вироби" >М'ясні вироби</option>
-                    <option value="Сир" >Сир</option>
-                    <option value="change">Інша</option>
-                    </select>
-                    <br />
-
-                    <label>Категорія:</label>
-                    <input type="text" name='category' 
-                    value={anItem.category}
-                    onChange={(e)=>setAnItem({...anItem,category:e.target.value})}/>
-                    <br />
-
-
-
-                    <label>Ціна:</label>
-                    <input type="text" name='price'
-                    value={anItem.price}
-                    onChange={(e)=>setAnItem({...anItem,price:+e.target.value})}/>
-                    <br />
-
-                    <label>Картинка:</label>
-                    <input type="file"  
+                    <div className='form-one-input'>
+                        <label>Вага:</label>
+                        <input type="text" name='weight'
+                        value={anItem.weight}
+                        onChange={(e)=>setAnItem({...anItem,weight:+e.target.value})}/>
+                    </div>
                     
-                    onChange={(e)=>setImg(e.target.files[0])}/>
-                    <br />
+                    <div className='form-one-input'>
+                        <label>Од. вим.:</label>
+                        <input type="text" name='unit'
+                        value={anItem.unit}
+                        onChange={(e)=>setAnItem({...anItem,unit:e.target.value})}/>
+                    </div>
+                    
+                    <div className='form-one-input'>
+                        <label>В ящику:</label>
+                        <input type="text" name='in_set'
+                        value={anItem.inSet}
+                        onChange={(e)=>setAnItem({...anItem,inSet:e.target.value})}/>
+                    </div>
+                    
+               
 
-                    <button className='submit-btn'>Додати</button>
+                    <div className='form-one-input'>
+                        <label>Категорія:</label>
 
-                </form>
+                        <select onChange={(e)=>setAnItem({...anItem,category:e.target.value})}> 
+                            <option value="Кава" >Кава</option>
+                            <option value="Солодощі" >Солодощі</option>
+                            <option value="Консервація | Макарони" >Консервація | Макарони</option>
+                            <option value="М'ясні вироби" >М'ясні вироби</option>
+                            <option value="Сир" >Сир</option>
+                            <option value="change">Інша</option>
+                        </select>
+
+                        <input type="text" name='category' 
+                            value={anItem.category}
+                            onChange={(e)=>setAnItem({...anItem,category:e.target.value})}/>
+
+                    </div>
+
+                    <div className='form-one-input'>
+                        <label>Ціна:</label>
+                        <input type="text" name='price'
+                        value={anItem.price}
+                        onChange={(e)=>setAnItem({...anItem,price:+e.target.value})}/>
+                    </div>
+
+                    <div className='form-one-input'>
+                        <label>Картинка:</label>
+                        <input type="file"
+                        placeholder='asd' 
+                        onChange={(e)=>setImg(e.target.files[0])}/>
+                    </div>
+
+
+                    <button className='submit-btn' onClick={handleSublit}>Додати</button>
+
+                
 
                
 

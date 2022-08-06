@@ -27,9 +27,13 @@
         flex-direction: column;
         align-items:center;
         gap:5px;
+        z-index: 1;
+        width:min(400px,90vw);
         .form-one-input{
             display: flex;
             flex-direction: column;
+            width:100%;
+            max-width: 380px;
         }
 
         label{
@@ -43,11 +47,14 @@
     
         input,select{
             min-width:240px;
+            
+            width: 95%;
             height: 25px;
             margin-bottom: 5px;
             font-size: 18px;
             padding-left: 10px;
             opacity: 0.9;
+            
             &[type="file"] {
                 max-width: 300px;
                 white-space: normal;

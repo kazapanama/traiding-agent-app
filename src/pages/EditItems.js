@@ -17,8 +17,14 @@ const EditItems = () => {
 
    
     const deleteItem = async(id) => {
-        const itemDoc = doc(db,'products',id)
-        await deleteDoc(itemDoc)
+
+        if (window.confirm("Точно видалити? Відновити буде неможливо")) {
+            const itemDoc = doc(db,'products',id)
+            await deleteDoc(itemDoc)
+          }
+
+
+        
       }
 
 

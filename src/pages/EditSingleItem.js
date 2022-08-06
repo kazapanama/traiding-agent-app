@@ -72,6 +72,23 @@ useEffect(()=>{
 //    img && uploadFile()
 //   },[img])
 
+const resetForm = async() => {
+    setSingleItem({
+        name:'',
+        weight:0,
+
+        unit:'г',
+        category:'Кава',
+
+        inSet:'',
+        price:0,
+
+
+    })
+    
+  }
+
+
 
 const editItem = async(id,singleItem,e) => {
     e.preventDefault()
@@ -87,64 +104,71 @@ const editItem = async(id,singleItem,e) => {
 
     const itemDoc = doc(db,'products',id)
     await updateDoc(itemDoc,result)
-    
+    resetForm()
   }
 
+  
 
 
     return ( 
         <div id='edit-single'>
-            <h1>EDIT SINGLE ITEM {id}</h1>
+            <h1>Редагувати товар</h1>
             <div className="wrapper">
                 
                 
             <div className="form-part">
-            <label>Назва:</label>
-                <input value={singleItem.name} 
-                onChange={(e)=>setSingleItem({...singleItem,name:e.target.value})}>
-                </input>
-                <br/>
+            
+                <div className='form-one-input'>
+                    <label>Назва:</label>
+                    <input value={singleItem.name} 
+                    onChange={(e)=>setSingleItem({...singleItem,name:e.target.value})}>
+                    </input>
+                </div>
+                
+             
+                <div className='form-one-input'>
+                    <label>Вага:</label>
+                    <input value={singleItem.weight} 
+                    onChange={(e)=>setSingleItem({...singleItem,weight:e.target.value})} />
+                    
+                </div>
+                
+             
+                <div className='form-one-input'> 
+                    <label>Од. вим.:</label>
+                    <input value={singleItem.measure_unit} 
+                    onChange={(e)=>setSingleItem({...singleItem,measure_unit:e.target.value})} />
+                   
+                </div>
+                
+            
+                <div className='form-one-input'>
+                    <label>В ящику:</label>
+                    <input value={singleItem.in_set} 
+                    onChange={(e)=>setSingleItem({...singleItem,in_set:e.target.value})} />
+                </div>
+                
+                <div className='form-one-input'>
+                    <label>Категорія:</label>
+                    <select onChange={(e)=>setSingleItem({...singleItem,category:e.target.value})}> 
+                        <option value="Кава" >Кава</option>
+                        <option value="Солодощі" >Солодощі</option>
+                        <option value="Консервація | Макарони" >Консервація | Макарони</option>
+                        <option value="М'ясні вироби" >М'ясні вироби</option>
+                        <option value="Сир" >Сир</option>
+                        <option value="change">Інша</option>
+                        </select>
 
-                <label>Вага:</label>
-                <input value={singleItem.weight} 
-                onChange={(e)=>setSingleItem({...singleItem,weight:e.target.value})}>
-                </input>
-                <br/>
+                    <input value={singleItem.category} 
+                    onChange={(e)=>setSingleItem({...singleItem,category:e.target.value})} />
+                
+                </div>
 
-                <label>Од. вим.:</label>
-                <input value={singleItem.measure_unit} 
-                onChange={(e)=>setSingleItem({...singleItem,measure_unit:e.target.value})}>
-                </input>
-                <br/>
-
-                <label>В ящику:</label>
-                <input value={singleItem.in_set} 
-                onChange={(e)=>setSingleItem({...singleItem,in_set:e.target.value})}>
-                </input>
-                <br/>
-
-                <select onChange={(e)=>setSingleItem({...singleItem,category:e.target.value})}> 
-                    <option value="Кава" >Кава</option>
-                    <option value="Солодощі" >Солодощі</option>
-                    <option value="Консервація | Макарони" >Консервація | Макарони</option>
-                    <option value="М'ясні вироби" >М'ясні вироби</option>
-                    <option value="Сир" >Сир</option>
-                    <option value="change">Інша</option>
-                    </select>
-                <br />
-
-                <label>Категорія:</label>
-                <input value={singleItem.category} 
-                onChange={(e)=>setSingleItem({...singleItem,category:e.target.value})}>
-                </input>
-                <br/>
-
-                <label>Ціна:</label>
-                <input value={singleItem.price} 
-                onChange={(e)=>setSingleItem({...singleItem,price:e.target.value})}>
-                </input>
-                <br/>
-
+                <div className='form-one-input'>
+                    <label>Ціна:</label>
+                    <input value={singleItem.price} 
+                    onChange={(e)=>setSingleItem({...singleItem,price:e.target.value})} />
+                </div>
 
                 {/* <label>img:</label>
                 <input type="file"  

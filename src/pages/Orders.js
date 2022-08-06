@@ -22,9 +22,11 @@ const Orders = () => {
       }
 
       const deleteOrder = async(id) => {
+        if (window.confirm("Точно видалити? Відновити буде неможливо")) {
+            const orderDoc = doc(db,'orders',id)
+            await deleteDoc(orderDoc)
+        }
         
-        const orderDoc = doc(db,'orders',id)
-        await deleteDoc(orderDoc)
       }
 
 

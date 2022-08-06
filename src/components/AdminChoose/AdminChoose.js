@@ -6,7 +6,7 @@ const AdminChoose = () => {
     return ( 
 
         <div id='admin-choose'>
-            <h1>ADMIN PAGE</h1>
+           
             <div className="wrapper">
                 <Link to='/admin/create' className='choose-link'>Додати товар</Link>
                 

@@ -4,7 +4,7 @@ header{
     background-color: mixins.$primary-color;
     position: sticky;
     top: 0;
-    
+    z-index:99;
 
     h1{
         color:white;

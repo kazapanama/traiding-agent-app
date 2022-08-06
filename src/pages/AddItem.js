@@ -132,25 +132,25 @@ const AddItem = () => {
             
 
                 <form onSubmit={handleSublit}>
-                    <label>name:</label>
+                    <label>Назва:</label>
                     <input type="text" name='name'
                     value={anItem.name}
                     onChange={(e)=>setAnItem({...anItem,name:e.target.value})}/>
                     <br />
 
-                    <label>weight:</label>
+                    <label>Вага:</label>
                     <input type="text" name='weight'
                     value={anItem.weight}
                     onChange={(e)=>setAnItem({...anItem,weight:+e.target.value})}/>
                     <br />
 
-                    <label>unit:</label>
+                    <label>Од. вим.:</label>
                     <input type="text" name='unit'
                     value={anItem.unit}
                     onChange={(e)=>setAnItem({...anItem,unit:e.target.value})}/>
                     <br />
 
-                    <label>in_set:</label>
+                    <label>В ящику:</label>
                     <input type="text" name='in_set'
                     value={anItem.inSet}
                     onChange={(e)=>setAnItem({...anItem,inSet:e.target.value})}/>
@@ -168,7 +168,7 @@ const AddItem = () => {
                     </select>
                     <br />
 
-                    <label>category:</label>
+                    <label>Категорія:</label>
                     <input type="text" name='category' 
                     value={anItem.category}
                     onChange={(e)=>setAnItem({...anItem,category:e.target.value})}/>
@@ -176,19 +176,19 @@ const AddItem = () => {
 
 
 
-                    <label>price:</label>
+                    <label>Ціна:</label>
                     <input type="text" name='price'
                     value={anItem.price}
                     onChange={(e)=>setAnItem({...anItem,price:+e.target.value})}/>
                     <br />
 
-                    <label>img:</label>
+                    <label>Картинка:</label>
                     <input type="file"  
                     
                     onChange={(e)=>setImg(e.target.files[0])}/>
                     <br />
 
-                    <button>submit</button>
+                    <button className='submit-btn'>Додати</button>
 
                 </form>
 

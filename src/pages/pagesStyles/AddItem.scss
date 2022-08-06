@@ -1,3 +1,5 @@
+@use '../../mixins.scss' as mixins;
+
 #add-item{
     .wrapper{
         display: flex;
@@ -29,5 +31,14 @@
     input{
         min-width:70%;
         margin: 5px 0;
+    }
+
+    button{
+        @include mixins.base-button(mixins.$primary-color);
+        font-size:20px;
+    }
+
+    .one-item{
+        margin-bottom: 50px;
     }
 }

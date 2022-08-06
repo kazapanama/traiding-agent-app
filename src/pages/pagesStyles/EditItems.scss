@@ -4,8 +4,13 @@
 
     display: flex;
     align-items:center;
+    justify-content: space-between;
     border-bottom: 1px solid mixins.$primary-color;
     background-color:white;
+    div{
+        display: flex;
+        align-items:center;
+    }
 
     &:first-of-type{
         margin-top: 50px;
@@ -16,30 +21,26 @@
         height:50px;
     }
 
-    .edit-btn-edit{
-        // color:white;
-        // background-color:mixins.$secondary-color;
-        // padding:10px;
-        // border:none;
-        // margin:0 5px;
-        // border-radius: 5px;
+    .edit-buttons{
+        min-width: 120px;
 
-        @include mixins.base-button(mixins.$secondary-color);
+        .edit-btn-edit{
+            @include mixins.base-button(mixins.$secondary-color);
+    
+        }
+    
+        .edit-btn-delete{
+            @include mixins.base-button(mixins.$primary-color);
+            width:40px;
+            aspect-ratio:1;
+            font-weight: 700;
+        }
 
     }
 
-    .edit-btn-delete{
-        @include mixins.base-button(mixins.$primary-color);
-        width:40px;
-        aspect-ratio:1;
-       
-        // color:white;
-        // background-color:mixins.$primary-color;
-        // padding:10px;
-        // border:none;
-        // margin:0 5px;
-        // border-radius: 5px;
-    }
+
+
+    
 }
 
 

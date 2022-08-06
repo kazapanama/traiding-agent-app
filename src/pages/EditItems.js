@@ -33,11 +33,17 @@ const EditItems = () => {
 
                 return(
                     <div key={item.id} className='edit-one-item'>
-                    <img src={item.main_image} alt={item.name} className='edit-image'/>
-                    <h3>{item.name}</h3>
-                    <Link to={item.id} className='edit-btn-edit'> EDIT</Link >
-                    <button onClick={()=>deleteItem(item.id)} className='edit-btn-delete'>X</button>
-                </div>
+                        <div>
+                            <img src={item.main_image} alt={item.name} className='edit-image'/>
+                            <h3>{item.name}</h3>
+                        </div>
+                        
+                        <div className="edit-buttons">
+                            <Link to={item.id} className='edit-btn-edit'> EDIT</Link >
+                            <button onClick={()=>deleteItem(item.id)} className='edit-btn-delete'>X</button>
+                        </div>
+                    
+                    </div>
                 )
 
 }  

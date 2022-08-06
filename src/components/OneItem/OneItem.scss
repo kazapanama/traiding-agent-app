@@ -1,3 +1,4 @@
+@use '../../mixins.scss' as mixins ;
 
 .one-item{
     width:100%;
@@ -25,15 +26,18 @@
   }
 
   .item-button{
-    width:200px;
-    background-color: red;
-    color: white;
+    // width:200px;
+    // background-color: red;
+    // color: white;
+    
+    // border:none;
+    // padding:5px 10px;
+    // border-radius:5px;
+    
+    @include mixins.base-button(mixins.$primary-color);
+    font-size: 20px;
     margin-bottom: 20px;
     margin-top: 5px;
-    border:none;
-    padding:5px 10px;
-    border-radius:5px;
-    font-size: 20px;
   }
 
   .item-text{
@@ -44,12 +48,10 @@
   }
 
   .quantity-add{
-    width:40px;
-    height: 40px;
-    background-color:blue;
-    color:white;
-    border-radius: 5px;
-    border:none;
+    @include mixins.base-button(mixins.$secondary-color);
+    width:50px;
+    aspect-ratio:1;
+    font-size: 20px;
     margin-top: 5px;
   }
 
@@ -67,11 +69,8 @@
   }
 
   .quantity-remove{
-    width:100px;
-    height: 40px;
-    background-color:red;
-    color:white;
-    border-radius: 5px;
-    border:none;
+    @include mixins.base-button(mixins.$primary-color);
     margin-bottom: 20px;
+    font-size: 20px;
+    margin-top: 5px;
   }

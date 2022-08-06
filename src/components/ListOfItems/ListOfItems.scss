@@ -1,3 +1,5 @@
+@use '../../mixins.scss' as mixins;
+
 .ListOfItems{
     width:100vw;
     height: 110vh;
@@ -41,12 +43,14 @@
         }
     
         button{
-            color:white;
-        background-color:blue;
-        padding:10px;
-        border:none;
-        border-radius: 5px;
-        margin:0 5px;
+            @include mixins.base-button(mixins.$secondary-color)
+            
+        // color:white;
+        // background-color:blue;
+        // padding:10px;
+        // border:none;
+        // border-radius: 5px;
+        // margin:0 5px;
         }
     
     }

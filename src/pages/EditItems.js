@@ -36,7 +36,7 @@ const EditItems = () => {
                     <img src={item.main_image} alt={item.name} className='edit-image'/>
                     <h3>{item.name}</h3>
                     <Link to={item.id} className='edit-btn-edit'> EDIT</Link >
-                    <button onClick={()=>deleteItem(item.id)} className='edit-btn-delete'>DELETE</button>
+                    <button onClick={()=>deleteItem(item.id)} className='edit-btn-delete'>X</button>
                 </div>
                 )
 

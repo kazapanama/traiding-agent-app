@@ -1,5 +1,7 @@
+@use '../../mixins.scss' as mixins ;
+
 header{
-    background-color: red;
+    background-color: mixins.$primary-color;
     position: sticky;
     top: 0;
     

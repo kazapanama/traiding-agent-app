@@ -1,3 +1,5 @@
+@use '../../mixins.scss' as mixins ;
+
 #admin-choose{
     h1{
         text-align: center;
@@ -16,13 +18,13 @@
     .choose-link{
         font-size: 20px;
         padding:10px 20px;
-        border:1px solid red;
+        border:1px solid mixins.$primary-color;
         border-radius: 5px;
         font-weight: 700;
-        color:red;
+        color:mixins.$primary-color;
         &:hover{
             color:white;
-            background-color: red;
+            background-color: mixins.$primary-color;
         }
     }
 }

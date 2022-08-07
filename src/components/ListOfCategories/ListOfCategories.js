@@ -13,7 +13,7 @@ const ListOfCategories = ({openCata,setOpenCata}) => {
     return ( 
         <div className={openCata ? 'ListOfCategories active' : 'ListOfCategories'}>
             <div className="wrapper">
-                <img src="./images/header/x.png" alt="x icon" onClick={()=>{
+                <img src="../images/header/x.png" alt="x icon" onClick={()=>{
                     setOpenCata(false)
                     document.body.style.overflow=''}}/>
                 

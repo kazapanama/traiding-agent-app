@@ -37,6 +37,9 @@
     }
     .list-submit{
         margin-bottom: 200px;
+        display:flex;
+        flex-direction: column;
+        align-items:center;
 
         @media (max-width:500px){
             width:80%;
@@ -47,7 +50,28 @@
             
        
         }
-    
+        div{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+
+            label{
+                font-size: 18px;
+                font-weight: 300;
+                margin-bottom: 1px;
+                
+            }
+
+            input{
+            min-width:240px;
+            width: 95%;
+            height: 25px;
+            margin-bottom: 10px;
+            font-size: 18px;
+            padding-left: 10px;
+            opacity: 0.9;
+            }
+        }
     }
 
 }

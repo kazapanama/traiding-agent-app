@@ -46,7 +46,7 @@ const EditItems = () => {
                         </div>
                         
                         <div className="edit-buttons">
-                            <Link to={item.id} className='edit-btn-edit'> EDIT</Link >
+                            <Link to={item.id} className='edit-btn-edit'> <img src='../images/edit/edit.svg' /></Link >
                             <button onClick={()=>deleteItem(item.id)} className='edit-btn-delete'>X</button>
                         </div>
                     

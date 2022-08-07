@@ -41,6 +41,8 @@ const Orders = () => {
            return(
             <div className={order.isDone ? 'one-order order-done' : 'one-order order-pending'} key={order.id}>
                 <h2>{order.destanation}</h2>
+                <h4>{order.isDone ? 'Виконано' :'Не виконано'}</h4>
+                <h3>{order.total}грн</h3>
                 <h3>сформовано:{(new Date(order.date)).toLocaleDateString()}</h3>
                 {order.order.map(pos=>{
                     const item = products.find(i=>i.id===pos.id)

@@ -12,13 +12,17 @@
     align-items:center;
     gap:15px;
 
-    label{
-        color:white;
-        font-size: 16px;
-        opacity: 0.7;
-    }
-
     input{
         border: none;
+        border-radius: 4px;
+        font-size: 18px;
+        font-weight: 300;
+        margin-bottom: 1px;
+    }
+
+    .search-icon{
+        opacity: 0.7;
+        width:25px;
+        height: 25px;
     }
 }

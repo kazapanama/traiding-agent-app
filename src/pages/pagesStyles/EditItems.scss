@@ -22,11 +22,13 @@
     }
 
     .edit-buttons{
-        min-width: 120px;
+        min-width: 100px;
 
         .edit-btn-edit{
+            width:40px;
+            height: 40px;
             @include mixins.base-button(mixins.$secondary-color);
-    
+            
         }
     
         .edit-btn-delete{

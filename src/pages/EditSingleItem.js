@@ -11,7 +11,8 @@ const EditSingleItem = () => {
     
     const{id} = useParams()
     const [singleItem,setSingleItem] = useState({})
-    const {products} = useGetDb()
+    const {products,reload,setReload} = useGetDb()
+  
 
     // const [img,setImg] = useState('');
     // const [imgURL,setImgURL] = useState('')
@@ -72,21 +73,7 @@ useEffect(()=>{
 //    img && uploadFile()
 //   },[img])
 
-const resetForm = async() => {
-    setSingleItem({
-        name:'',
-        weight:0,
 
-        unit:'г',
-        category:'Кава',
-
-        inSet:'',
-        price:0,
-
-
-    })
-    
-  }
 
 
 
@@ -104,7 +91,8 @@ const editItem = async(id,singleItem,e) => {
 
     const itemDoc = doc(db,'products',id)
     await updateDoc(itemDoc,result)
-    resetForm()
+    setReload(!reload)
+    window.alert('Зміни внесено')
   }
 
   

@@ -11,6 +11,7 @@ export default function useFetchDB() {
     const productsCollectionRef = collection(db,'products')
     const [products, setProducts] = useState({})
     const [categories,setCategories] = useState([])
+    const [reload,setReload] = useState(false)
     
 
     useEffect(() => {
@@ -32,7 +33,8 @@ export default function useFetchDB() {
            
         }
         getProducts()
+        console.log('fetching db')
         
-      },[])
-      return {products,categories}
+      },[reload])
+      return {products,categories,reload,setReload}
 }

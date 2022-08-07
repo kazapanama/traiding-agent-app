@@ -10,11 +10,11 @@ export function useGetDb(){
 
 
 export function DbContextProvider({children}) {
-    const {products,categories} = useFetchDB()
+    const {products,categories,reload,setReload} = useFetchDB()
 
 
 
-    return <DbContext.Provider value={{products,categories}}>
+    return <DbContext.Provider value={{products,categories,reload,setReload}}>
         {children}
     </DbContext.Provider>
 }

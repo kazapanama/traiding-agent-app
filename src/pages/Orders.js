@@ -39,13 +39,13 @@ const Orders = () => {
 
            {filtered && filtered.map(order=>{
            return(
-            <div className={order.isDone ? 'one-order order-done' : 'one-order order-pending'}>
+            <div className={order.isDone ? 'one-order order-done' : 'one-order order-pending'} key={order.id}>
                 <h2>{order.destanation}</h2>
                 <h3>сформовано:{(new Date(order.date)).toLocaleDateString()}</h3>
                 {order.order.map(pos=>{
                     const item = products.find(i=>i.id===pos.id)
                     return(
-                        <div className='order-info'>
+                        <div className='order-info' key={pos.id}>
                             <div className='left-part'>
                                  <img src={item.main_image} alt={item.name} className='order-img'/>
                                  <span className='order-info-name'>{item.name}</span>

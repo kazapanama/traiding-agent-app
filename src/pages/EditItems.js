@@ -10,7 +10,7 @@ import Search from "../components/Search/Search";
 
 const EditItems = () => {
     
-    const {products} = useGetDb();
+    const {products,reload,setReload} = useGetDb();
     const [search,setSearch] = useState('');
 
     
@@ -21,6 +21,7 @@ const EditItems = () => {
         if (window.confirm("Точно видалити? Відновити буде неможливо")) {
             const itemDoc = doc(db,'products',id)
             await deleteDoc(itemDoc)
+            setReload(!reload)
           }
 
 

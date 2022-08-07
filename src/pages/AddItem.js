@@ -10,10 +10,14 @@ import { collection, addDoc} from 'firebase/firestore'
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage"
 import PreviewItem from '../components/PreviewItem/PreviewItem'
 
+import { useGetDb } from '../context/DbContext'
+
 
 
 
 const AddItem = () => {
+    
+
     const [anItem,setAnItem] = useState({
         name:'',
         weight:0,
@@ -27,6 +31,7 @@ const AddItem = () => {
 
     })
     
+    const {reload,setReload} = useGetDb()
     const [img,setImg] = useState('');
     const [imgURL,setImgURL] = useState('')
     
@@ -65,6 +70,7 @@ const AddItem = () => {
 
         await addDoc(usesrsCollectionRef,result)
         await resetForm()
+         setReload(!reload)
       }
 
       

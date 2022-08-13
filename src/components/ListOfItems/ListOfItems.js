@@ -29,6 +29,7 @@ const submitCart = async(e) => {
     await addDoc(usesrsCollectionRef,{order:cartItems,total,destanation:where,isDone:false,date:Date.now()})
     setCartItems([])
     setWhere('')
+    alert('Замовлення додано')
 }
 
     

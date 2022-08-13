@@ -64,7 +64,7 @@ const Orders = () => {
                     )
                 })}
                         <div className='buttons-section'>
-                            <button onClick={()=>updateOrder(order.id,order.isDone)} className='update-btn'>Оновити стан</button>
+                            <button onClick={()=>updateOrder(order.id,order.isDone)} className='update-btn'>Змінити стан</button>
                              <button onClick={()=>deleteOrder(order.id,order.isDone)} className='delete-btn'>Видалити</button>
                         </div>
                         

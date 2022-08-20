@@ -18,14 +18,14 @@ const OneItem = ({item}) => {
                     <span>Вага: <strong> {item.weight}{item.measure_unit}</strong></span>
                     <span><strong>{item.in_set}</strong></span>
                     <span>Ціна:  <strong>{item.price}грн</strong></span>
-                    { quantity === 0 && <button className='item-button' onClick={()=>increaseCartQuantity(item.id)}>Додати в список</button>}
+                    { quantity === 0 && <button className='item-button' onClick={()=>increaseCartQuantity(item.id)}>Додати</button>}
                    {quantity > 0 && <div className='quantity-buttons'>
                         <div>
                             <button className='quantity-add' onClick={()=>decreaseCartQuantity(item.id)}>-1</button>
                             <span>{quantity}</span>
                             <button className='quantity-add' onClick={()=>increaseCartQuantity(item.id)}>+1</button>
                         </div>
-                        <button className='quantity-remove' onClick={()=>removeFromCart(item.id)}>Видалити зі списку</button>
+                        <button className='quantity-remove' onClick={()=>removeFromCart(item.id)}>Видалити</button>
                     </div>} 
                 </div>
                 

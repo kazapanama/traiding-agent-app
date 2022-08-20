@@ -27,8 +27,19 @@ const submitCart = async(e) => {
     e.preventDefault()
     const usesrsCollectionRef = collection(db,'orders')
     await addDoc(usesrsCollectionRef,{order:cartItems,total,destanation:where,isDone:false,date:Date.now()})
-    setCartItems([])
-    setWhere('')
+    let space = '%0A'
+    let result = `Додано нове замовлення${space} за адрессою:${where}${space}` 
+    result += cartItems.map(itemo=>{
+        const item = products.find(i=>i.id===itemo.id)
+        return `${space}${item.name} x ${itemo.quantity}\n`
+    })
+    result += `${space}Сумма замовлення: ${total}грн`
+    console.log(result)
+    fetch(`https://api.telegram.org/bot5526411852:AAH99NHMHVIYUuxFvlV9cO6ExM7Z6SSwFXs/sendMessage?chat_id=335863280&text=${result}`)
+
+
+    // setCartItems([])
+    // setWhere('')
     alert('Замовлення додано')
 }
 

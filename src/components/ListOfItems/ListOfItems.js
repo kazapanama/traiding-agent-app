@@ -11,6 +11,8 @@ const ListOfItems = ({openList,setOpenList}) => {
     
 const [total,setTotal] = useState(0)
 const [where,setWhere] = useState('')
+const [number,setNumber] = useState('')
+const [clientName,setClientName] = useState('')
 
 const {cartItems,setCartItems} = useShoppingCart();
 const {products} = useGetDb()
@@ -26,20 +28,25 @@ useEffect(()=>{
 const submitCart = async(e) => {
     e.preventDefault()
     const usesrsCollectionRef = collection(db,'orders')
-    await addDoc(usesrsCollectionRef,{order:cartItems,total,destanation:where,isDone:false,date:Date.now()})
+    await addDoc(usesrsCollectionRef,{order:cartItems,total,destanation:where,number,clientName,isDone:false,date:Date.now()})
     let space = '%0A'
-    let result = `Додано нове замовлення${space} за адрессою:${where}${space}` 
+    let result = `Додано нове замовлення${space} за адрессою:${where}${space}
+    Ім'я клієнта:${clientName}${space}
+    Телефон:${number}${space}` 
     result += cartItems.map(itemo=>{
         const item = products.find(i=>i.id===itemo.id)
         return `${space}${item.name} x ${itemo.quantity}\n`
     })
     result += `${space}Сумма замовлення: ${total}грн`
     console.log(result)
+    
     fetch(`https://api.telegram.org/bot5526411852:AAH99NHMHVIYUuxFvlV9cO6ExM7Z6SSwFXs/sendMessage?chat_id=335863280&text=${result}`)
 
 
-    // setCartItems([])
-    // setWhere('')
+    setCartItems([])
+    setWhere('')
+    setClientName('')
+    setNumber('')
     alert('Замовлення додано')
 }
 
@@ -64,10 +71,20 @@ const submitCart = async(e) => {
                </div>
                     <div className='list-submit'>
                         <div>
-                            <label>Адреса доставки:</label>
-                            <input type='text' value={where} onChange={(e)=>{setWhere(e.target.value)}}/>
+                            <form onSubmit={submitCart}>
+                                <label>Адреса доставки:</label>
+                                <input type='text' required minLength={10} value={where} onChange={(e)=>{setWhere(e.target.value)}}/>
+
+                                <label>Номер телефону:</label>
+                                <input type='number' required minLength={10} maxLength={17} value={number} placeholder='097 998 99 99' onChange={(e)=>{setNumber(e.target.value)}}/>
+
+                                <label>Ваше ім'я:</label>
+                                <input type='text'  required minLength={4} value={clientName} onChange={(e)=>{setClientName(e.target.value)}}/>
+                                <button  type='submit'>Відправити</button>
+                            </form>
+                            
                         </div>
-                        <button onClick={submitCart} type='submit'>Відправити</button>
+                        
                     </div>
              
                 
